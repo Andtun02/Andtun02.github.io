@@ -6,38 +6,17 @@
   
   <title>Hadoop集群搭建教程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Hadoop集群搭建&lt;图文版&gt; · 2021&#x2F;9&#x2F;17 🌏准备工具： VMware Workstation [虚拟机软件] SecureCRT 或 Xshell [远程连接工具] Hadoop 2.7.3 Linux Jdk1.8.0_65     🤔前言： 注意修改为自己的网关、网段 【凡涉及之处会提示“【!】”】 注意修改为自己的主机名    一. 新建虚拟机参考传送门: ht">
+  <meta name="description" content="在Windows电脑上操作VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; NAT设置 &#x2F;&#x2F; 获得网关IP：192.168.80.2  【!】 VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; DHCP设置 &#x2F;&#x2F; 获得网段：[起始IP地">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop集群搭建教程">
 <meta property="og:url" content="http://example.com/2021/10/17/Hadoop/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hadoop集群搭建&lt;图文版&gt; · 2021&#x2F;9&#x2F;17 🌏准备工具： VMware Workstation [虚拟机软件] SecureCRT 或 Xshell [远程连接工具] Hadoop 2.7.3 Linux Jdk1.8.0_65     🤔前言： 注意修改为自己的网关、网段 【凡涉及之处会提示“【!】”】 注意修改为自己的主机名    一. 新建虚拟机参考传送门: ht">
+<meta property="og:description" content="在Windows电脑上操作VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; NAT设置 &#x2F;&#x2F; 获得网关IP：192.168.80.2  【!】 VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; DHCP设置 &#x2F;&#x2F; 获得网段：[起始IP地">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917213113823.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917213221544.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917213247018.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917213320316.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917224501438.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917220010678.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917221723588.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917223658226.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917231154829.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917232812062.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917234005366.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917234813222.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210918002417429.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917234932102.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917235059334.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917235512185.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210918000043900.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210918000210885.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210918000249647.png">
-<meta property="og:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210918004742108.png">
-<meta property="article:published_time" content="2021-10-16T16:00:50.000Z">
-<meta property="article:modified_time" content="2021-10-16T16:57:00.126Z">
+<meta property="article:published_time" content="2021-10-16T16:58:57.000Z">
+<meta property="article:modified_time" content="2021-10-16T17:08:40.995Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/17/Hadoop/2021/10/17/Hadoop/md-img/image-20210917213113823.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -93,7 +72,7 @@
         <section id="main"><article id="post-Hadoop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/10/17/Hadoop/" class="article-date">
-  <time class="dt-published" datetime="2021-10-16T16:00:50.000Z" itemprop="datePublished">2021-10-17</time>
+  <time class="dt-published" datetime="2021-10-16T16:58:57.000Z" itemprop="datePublished">2021-10-17</time>
 </a>
     
   </div>
@@ -112,345 +91,134 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Hadoop集群搭建-lt-图文版-gt-·-2021-9-17"><a href="#Hadoop集群搭建-lt-图文版-gt-·-2021-9-17" class="headerlink" title="Hadoop集群搭建&lt;图文版&gt; · 2021/9/17"></a>Hadoop集群搭建&lt;图文版&gt; · 2021/9/17</h1><blockquote>
-<h4 id="🌏准备工具："><a href="#🌏准备工具：" class="headerlink" title="🌏准备工具："></a>🌏准备工具：</h4><ul>
-<li>VMware Workstation [虚拟机软件]</li>
-<li>SecureCRT 或 Xshell [远程连接工具]</li>
-<li>Hadoop 2.7.3</li>
-<li>Linux Jdk1.8.0_65</li>
-</ul>
-</blockquote>
-<hr>
-<blockquote>
-<h4 id="🤔前言："><a href="#🤔前言：" class="headerlink" title="🤔前言："></a>🤔前言：</h4><ul>
-<li>注意修改为自己的网关、网段 【凡涉及之处会提示“【!】”】</li>
-<li>注意修改为自己的主机名</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="一-新建虚拟机"><a href="#一-新建虚拟机" class="headerlink" title="一. 新建虚拟机"></a>一. 新建虚拟机</h2><p>参考传送门: <a target="_blank" rel="noopener" href="http://andtun.cn/vm.html">http://andtun.cn/vm.html</a></p>
-<pre><code class="java">// 夹带私货,偷偷引流
-</code></pre>
-<h2 id="二-虚拟机配置及集群规划"><a href="#二-虚拟机配置及集群规划" class="headerlink" title="二. 虚拟机配置及集群规划"></a>二. 虚拟机配置及集群规划</h2><h4 id="登录-gt-修改主机名-gt-获取网关-gt-规划集群-gt-配置网卡-gt-修改Hosts-gt-关防火墙"><a href="#登录-gt-修改主机名-gt-获取网关-gt-规划集群-gt-配置网卡-gt-修改Hosts-gt-关防火墙" class="headerlink" title="登录 &gt; 修改主机名 &gt; 获取网关 &gt; 规划集群 &gt; 配置网卡 &gt; 修改Hosts &gt; 关防火墙"></a>登录 &gt; 修改主机名 &gt; 获取网关 &gt; 规划集群 &gt; 配置网卡 &gt; 修改Hosts &gt; 关防火墙</h4><hr>
-<blockquote>
-<h4 id="✒️登录"><a href="#✒️登录" class="headerlink" title="✒️登录"></a>✒️登录</h4></blockquote>
-<pre><code class="java">// 略 密码是不显示的，所以输入之后直接回车即可
-</code></pre>
-<blockquote>
-<h4 id="📝修改主机名"><a href="#📝修改主机名" class="headerlink" title="📝修改主机名"></a>📝修改主机名</h4></blockquote>
-<pre><code class="java">hostnamectl set-hostname node01 // 其中 node01 指的是 需要修改成主机名
-</code></pre>
-<blockquote>
-<h4 id="🧐获取网关"><a href="#🧐获取网关" class="headerlink" title="🧐获取网关"></a>🧐获取网关</h4></blockquote>
-<pre><code class="java">VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; NAT设置
-// 获得网关IP：192.168.96.2    【!】
+        <h2 id="在Windows电脑上操作"><a href="#在Windows电脑上操作" class="headerlink" title="在Windows电脑上操作"></a>在Windows电脑上操作</h2><pre><code class="java">VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; NAT设置
+// 获得网关IP：192.168.80.2  【!】
 VMware软件主界面 &gt;&gt; 编辑 &gt;&gt; 虚拟网络编辑器 &gt;&gt; VMnet8 &gt;&gt; DHCP设置
-// 获得网段：[起始IP地址]192.168.128 --- [结束IP地址]192.168.96.254    【!】
-// 即下面计划的IP在起始和结束之内就可以
+// 获得网段：[起始IP地址]192.168.80.128 --- [结束IP地址]192.168.80.254  【!】
+
+// 计划集群的ip和主机名    【!】
+//192.168.80.151    node01
+//192.168.80.152    node02
+//192.168.80.153    node03
+</code></pre>
+<h2 id="在Node01中操作"><a href="#在Node01中操作" class="headerlink" title="在Node01中操作"></a>在Node01中操作</h2><h6 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h6><pre><code>hostnamectl set-hostname node01
+</code></pre>
+<h6 id="编辑网卡"><a href="#编辑网卡" class="headerlink" title="编辑网卡"></a>编辑网卡</h6><pre><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre>
+<pre><code class="python">BOOTPROTO=static
+ONBOOT=yes
+# 添加
+IPADDR=192.168.80.151 # IP地址[注意要在网段内]        【!】
+GATEWAY=192.168.80.2 # 设置你的网关    【!】
+NETMASK=255.255.255.0
+DNS1=119.29.29.29
+DNS2=8.8.8.8
+</code></pre>
+<hr>
+<h6 id="修改映射文件"><a href="#修改映射文件" class="headerlink" title="修改映射文件"></a>修改映射文件</h6><pre><code>vi /etc/hosts
+</code></pre>
+<pre><code class="python"># 添加
+192.168.80.151    node01
+192.168.80.152    node02
+192.168.80.153    node03
+</code></pre>
+<h2 id="在Windows电脑上操作-1"><a href="#在Windows电脑上操作-1" class="headerlink" title="在Windows电脑上操作"></a>在Windows电脑上操作</h2><h6 id="修改映射文件-1"><a href="#修改映射文件-1" class="headerlink" title="修改映射文件"></a>修改映射文件</h6><pre><code class="java">此电脑 &gt;&gt; C盘 =&gt; Windows &gt;&gt; System32 &gt;&gt; drivers &gt;&gt; etc &gt;&gt; hosts
+</code></pre>
+<pre><code class="python"># 添加
+192.168.80.151    node01
+192.168.80.152    node02
+192.168.80.153    node03
+</code></pre>
+<h2 id="在Node01中操作-1"><a href="#在Node01中操作-1" class="headerlink" title="在Node01中操作"></a>在Node01中操作</h2><h6 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h6><pre><code class="java">systemctl stop firewalldsystemctl disable firewalldreboot // 重启虚拟机
+</code></pre>
+<h2 id="在Windows电脑上操作-2"><a href="#在Windows电脑上操作-2" class="headerlink" title="在Windows电脑上操作"></a>在Windows电脑上操作</h2><h6 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h6><pre><code class="java">打开SecureCRT &gt;&gt; 文件 &gt;&gt; 连接 &gt;&gt; 新建会话
+</code></pre>
+<pre><code class="java">// 修改主机名: node01 // node01指的是主机名用户名: root//点连接然后输入您用户的密码即可登录
+</code></pre>
+<h2 id="在Node01中操作-2"><a href="#在Node01中操作-2" class="headerlink" title="在Node01中操作"></a>在Node01中操作</h2><h6 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h6><pre><code>mkdir /opt/software /opt/module
+</code></pre>
+<h6 id="切换工作目录"><a href="#切换工作目录" class="headerlink" title="切换工作目录"></a>切换工作目录</h6><pre><code>cd /opt/software  
+</code></pre>
+<p>上传文件</p>
+<pre><code class="java">yum -y install lrzsz // 安装RZrz
+</code></pre>
+<pre><code>找到文件 &gt;&gt; 单击选中文件 &gt;&gt; 添加(可添加多个) &gt;&gt; 确定
 </code></pre>
 <blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917213113823.png" alt="image-20210917213113823"></p>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917213221544.png" alt="image-20210917213221544"></p>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917213247018.png" alt="image-20210917213247018"><img src="./2021/10/17/Hadoop/md-img/image-20210917213320316.png" alt="image-20210917213320316"></p>
+<hr>
+<h6 id="CentOS-7-9-跳过-此步骤-卸载Linux自带的JDK"><a href="#CentOS-7-9-跳过-此步骤-卸载Linux自带的JDK" class="headerlink" title="[CentOS 7.9 跳过 此步骤] 卸载Linux自带的JDK"></a>[CentOS 7.9 跳过 此步骤] 卸载Linux自带的JDK</h6><pre><code>// 查看以安装JDK版本rpm -qa | grep jdk// 卸载JDKrpm -e --nodeps JDK名称
+</code></pre>
 </blockquote>
-<blockquote>
-<h4 id="📋计划集群"><a href="#📋计划集群" class="headerlink" title="📋计划集群"></a>📋计划集群</h4></blockquote>
-<pre><code class="java">// 计划集群的ip和主机名    【!】
-192.168.96.151    node01
-192.168.96.152    node02
-192.168.96.153    node03
+<hr>
+<h6 id="解压JDK和Hadoop"><a href="#解压JDK和Hadoop" class="headerlink" title="解压JDK和Hadoop"></a>解压JDK和Hadoop</h6><pre><code>tar -zxvf /opt/software/jdk-8u65-linux-x64.tar.gz -C /opt/moduletar -zxvf /opt/software/hadoop-2.7.3.tar.gz -C /opt/module/
 </code></pre>
-<blockquote>
-<h4 id="📤配置网卡"><a href="#📤配置网卡" class="headerlink" title="📤配置网卡"></a>📤配置网卡</h4></blockquote>
-<pre><code class="java">vi /etc/sysconfig/network-scripts/ifcfg-ens33
+<h6 id="重命名文件夹"><a href="#重命名文件夹" class="headerlink" title="重命名文件夹"></a>重命名文件夹</h6><pre><code>mv /opt/module/jdk1.8.0_65/ /opt/module/jdkmv /opt/module/hadoop-2.7.3/ /opt/module/hadoop
 </code></pre>
-<pre><code class="java">// 修改
-BOOTPROTO=static // 修改为静态IP
-ONBOOT=yes // 开机启动网卡
-// 添加
-IPADDR=192.168.96.151 // IP地址[注意要在网段内]        【!】
-GATEWAY=192.168.96.2 // 设置你的网关    【!】
-NETMASK=255.255.255.0 // 设置子网掩码
-DNS1=119.29.29.29 // DNS
-DNS2=8.8.8.8 // 备用DNS
+<h6 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h6><pre><code>vi /etc/profile
 </code></pre>
-<pre><code class="java">// systemctl restart network 重启网络
-// 配置完网卡之后需要重启网络才能生效,但这里我们可以不重启网络,因为教程后面需要重启虚拟机
+<pre><code class="python"># 添加export JAVA_HOME=/opt/module/jdkexport HADOOP_HOME=/opt/module/hadoopexport PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917224501438.png" alt="image-20210917224501438"></p>
-</blockquote>
-<blockquote>
-<h4 id="📝修改Hosts"><a href="#📝修改Hosts" class="headerlink" title="📝修改Hosts"></a>📝修改Hosts</h4></blockquote>
-<h5 id="1-修改虚拟机Hosts"><a href="#1-修改虚拟机Hosts" class="headerlink" title="1.修改虚拟机Hosts"></a>1.修改虚拟机Hosts</h5><pre><code class="java">vi /etc/hosts
+<hr>
+<h6 id="刷新环境变量"><a href="#刷新环境变量" class="headerlink" title="刷新环境变量"></a>刷新环境变量</h6><pre><code class="java">source /etc/profile
 </code></pre>
-<pre><code class="java">// 添加    【!】
-192.168.96.151    node01
-192.168.96.152    node02
-192.168.96.153    node03
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917220010678.png" alt="image-20210917220010678"></p>
-</blockquote>
-<h5 id="2-修改Windows电脑上的的Hosts"><a href="#2-修改Windows电脑上的的Hosts" class="headerlink" title="2.修改Windows电脑上的的Hosts"></a>2.修改Windows电脑上的的Hosts</h5><pre><code class="java">此电脑 &gt;&gt; C盘 =&gt; Windows &gt;&gt; System32 &gt;&gt; drivers &gt;&gt; etc &gt;&gt; hosts
-</code></pre>
-<pre><code class="java">// 添加    【!】
-192.168.96.151    node01
-192.168.96.152    node02
-192.168.96.153    node03
-</code></pre>
-<pre><code class="java">// 有权限保存不了就 复制出来 改好了 覆盖回去
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917221723588.png" alt="image-20210917221723588"></p>
-</blockquote>
-<blockquote>
-<h4 id="📛关闭防火墙"><a href="#📛关闭防火墙" class="headerlink" title="📛关闭防火墙"></a>📛关闭防火墙</h4></blockquote>
-<pre><code class="java">systemctl stop firewalld // 关闭防火墙
-systemctl disable firewalld // 禁止开机启动防火墙
-// systemctl status firewalld 查看防火墙状态
-</code></pre>
-<pre><code class="java">reboot // 重启虚拟机
-</code></pre>
-<h2 id="🔗三-远程连接工具并上传文件准备"><a href="#🔗三-远程连接工具并上传文件准备" class="headerlink" title="🔗三.远程连接工具并上传文件准备"></a>🔗三.远程连接工具并上传文件准备</h2><h5 id="1-远程连接"><a href="#1-远程连接" class="headerlink" title="1.远程连接"></a>1.远程连接</h5><pre><code class="java">文件 &gt;&gt; 连接 &gt;&gt; 新建会话
-</code></pre>
-<pre><code class="java">// 修改
-主机名: node01 // node01指的是主机名
-用户名: root
-</code></pre>
-<pre><code class="java">继续下一页 &gt; 完成 &gt; 连接 即可
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917223658226.png" alt="image-20210917223658226"></p>
-</blockquote>
-<h5 id="2-上传文件准备"><a href="#2-上传文件准备" class="headerlink" title="2.上传文件准备"></a>2.上传文件准备</h5><pre><code class="java">// 安装winscp远程工具(FTP工具)或者安装rz工具上传文件
-</code></pre>
-<pre><code class="java">yum -y install lrzsz // 安装RZ
-</code></pre>
-<h2 id="📦四-安装JDK和Hadoop"><a href="#📦四-安装JDK和Hadoop" class="headerlink" title="📦四.安装JDK和Hadoop"></a>📦四.安装JDK和Hadoop</h2><h5 id="1-下载Linux版JDK8-和-Hadoop2-7-3版本"><a href="#1-下载Linux版JDK8-和-Hadoop2-7-3版本" class="headerlink" title="1.下载Linux版JDK8 和 Hadoop2.7.3版本"></a>1.下载Linux版JDK8 和 Hadoop2.7.3版本</h5><pre><code class="text">[Hadoop2.7.3 下载链接] https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz
-[Linux Jdk1.8.0_65 下载链接]
-略....
-</code></pre>
-<h5 id="2-新建文件夹"><a href="#2-新建文件夹" class="headerlink" title="2.新建文件夹"></a>2.新建文件夹</h5><pre><code class="java">// 在根目录下的opt文件夹内,创建software 和 module文件夹
-// software用于存放压缩文件 | module用于存放安装程序
-mkdir /opt/software /opt/module
-</code></pre>
-<h5 id="3-上传文件"><a href="#3-上传文件" class="headerlink" title="3.上传文件"></a>3.上传文件</h5><pre><code class="java">// 切换工作目录至software
-cd /opt/software
-</code></pre>
-<pre><code class="java">// 使用FTP工具或者使用RZ上传JDK、Hadoop至software目录
-// 下面演示的是RZ上传
-rz
-</code></pre>
-<pre><code class="java">找到文件 &gt;&gt; 单击选中文件 &gt;&gt; 添加(可添加多个) &gt;&gt; 确定
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917231154829.png" alt="image-20210917231154829"></p>
-</blockquote>
-<h5 id="3-1-CentOS-7-9-跳过-此步骤-卸载Linux自带的JDK"><a href="#3-1-CentOS-7-9-跳过-此步骤-卸载Linux自带的JDK" class="headerlink" title="3-1.[CentOS 7.9 跳过 此步骤] 卸载Linux自带的JDK"></a>3-1.[CentOS 7.9 跳过 此步骤] 卸载Linux自带的JDK</h5><pre><code class="java">// 查看以安装JDK版本
-rpm -qa | grep jdk
-// 卸载JDK
-rpm -e --nodeps JDK名称  //或  yum remove 软件名称
-</code></pre>
-<h5 id="4-解压JDK和Hadoop"><a href="#4-解压JDK和Hadoop" class="headerlink" title="4.解压JDK和Hadoop"></a>4.解压JDK和Hadoop</h5><pre><code class="java">// 解压JDK 至 /opt/module 文件夹
-tar -zxvf /opt/software/jdk-8u65-linux-x64.tar.gz -C /opt/module
-// 解压Hadoop 至 /opt/module 文件夹
-tar -zxvf /opt/software/hadoop-2.7.3.tar.gz -C /opt/module/
-</code></pre>
-<h5 id="5-重命名JDK和hadoop"><a href="#5-重命名JDK和hadoop" class="headerlink" title="5.重命名JDK和hadoop"></a>5.重命名JDK和hadoop</h5><pre><code class="java">// 重命名文件夹 jdk1.8.0_65 为 jdk
-mv /opt/module/jdk1.8.0_65/ /opt/module/jdk
-// 重命名文件夹 hadoop-2.7.3 为 hadoop
-mv /opt/module/hadoop-2.7.3/ /opt/module/hadoop
-</code></pre>
-<h5 id="6-配置环境变量"><a href="#6-配置环境变量" class="headerlink" title="6.配置环境变量"></a>6.配置环境变量</h5><pre><code>vi /etc/profile
-</code></pre>
-<pre><code class="java">// 移动最后一行 [shift + G]
-// 添加
-export JAVA_HOME=/opt/module/jdk
-export HADOOP_HOME=/opt/module/hadoop
-export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917232812062.png" alt="image-20210917232812062"></p>
-</blockquote>
-<h5 id="7-刷新环境变量令它生效"><a href="#7-刷新环境变量令它生效" class="headerlink" title="7.刷新环境变量令它生效"></a>7.刷新环境变量令它生效</h5><pre><code class="java">source /etc/profile
-</code></pre>
-<h5 id="8-验证配置JDK和Hadoop是否成功"><a href="#8-验证配置JDK和Hadoop是否成功" class="headerlink" title="8.验证配置JDK和Hadoop是否成功"></a>8.验证配置JDK和Hadoop是否成功</h5><pre><code class="java">// 验证Java
-java -version
-// 验证Hadoop
-hadoop version
-</code></pre>
-<h2 id="📰五-修改Hadoop配置文件"><a href="#📰五-修改Hadoop配置文件" class="headerlink" title="📰五.修改Hadoop配置文件"></a>📰五.修改Hadoop配置文件</h2><pre><code class="java">// 切换工作目录至/opt/module/hadoop/etc/hadoop/
-cd /opt/module/hadoop/etc/hadoop/
+<h6 id="切换工作目录-1"><a href="#切换工作目录-1" class="headerlink" title="切换工作目录"></a>切换工作目录</h6><pre><code>cd /opt/module/hadoop/etc/hadoop/
 </code></pre>
 <h5 id="1-编辑core-site-xml"><a href="#1-编辑core-site-xml" class="headerlink" title="1.编辑core-site.xml"></a>1.编辑core-site.xml</h5><pre><code>vi core-site.xml
 </code></pre>
-<pre><code class="python"># 添加    [在configuration之内]
-# &lt;configuration&gt;
-    &lt;property&gt;
-
-        &lt;name&gt;fs.defaultFS&lt;/name&gt;
-
-        &lt;value&gt;hdfs://node01:9000&lt;/value&gt;
-
-    &lt;/property&gt;
-
-    &lt;property&gt;
-
-        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
-
-        &lt;value&gt;/opt/module/hadoop/data/tmp&lt;/value&gt;
-
-    &lt;/property&gt;
-# &lt;/configuration&gt;
+<pre><code class="python"># &lt;configuration&gt;    &lt;property&gt;        &lt;name&gt;fs.defaultFS&lt;/name&gt;        &lt;value&gt;hdfs://node01:9000&lt;/value&gt;    &lt;/property&gt;    &lt;property&gt;        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;        &lt;value&gt;/opt/module/hadoop/data/tmp&lt;/value&gt;    &lt;/property&gt;# &lt;/configuration&gt;
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917234005366.png" alt="image-20210917234005366"></p>
-</blockquote>
 <h5 id="2-编辑hdfs-site-xml"><a href="#2-编辑hdfs-site-xml" class="headerlink" title="2.编辑hdfs-site.xml"></a>2.编辑hdfs-site.xml</h5><pre><code>vi hdfs-site.xml
 </code></pre>
-<pre><code class="python"># 添加    [在configuration之内]
-# &lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;dfs.replication&lt;/name&gt;
-        &lt;value&gt;3&lt;/value&gt;
-    &lt;/property&gt;
-    &lt;property&gt;
-        &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
-        &lt;value&gt;node02:50090&lt;/value&gt;
-    &lt;/property&gt;
-# &lt;/configuration&gt;
+<pre><code class="python"># &lt;configuration&gt;    &lt;property&gt;        &lt;name&gt;dfs.replication&lt;/name&gt;        &lt;value&gt;3&lt;/value&gt;    &lt;/property&gt;    &lt;property&gt;        &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;        &lt;value&gt;node02:50090&lt;/value&gt;    &lt;/property&gt;# &lt;/configuration&gt;
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917234813222.png" alt="image-20210917234813222"></p>
-</blockquote>
-<h5 id="3-编辑mapred-site-xml"><a href="#3-编辑mapred-site-xml" class="headerlink" title="3.编辑mapred-site.xml"></a>3.编辑mapred-site.xml</h5><pre><code class="java">// 复制并重命名文件
-cp mapred-site.xml.template  mapred-site.xml
-// 编辑文件
-vi mapred-site.xml
+<h5 id="3-编辑mapred-site-xml"><a href="#3-编辑mapred-site-xml" class="headerlink" title="3.编辑mapred-site.xml"></a>3.编辑mapred-site.xml</h5><pre><code class="java">cp mapred-site.xml.template  mapred-site.xmlvi mapred-site.xml
 </code></pre>
-<pre><code class="python"># 添加    [在configuration之内]
-# &lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
-        &lt;value&gt;yarn&lt;/value&gt;
-    &lt;/property&gt;
-# &lt;/configuration&gt;
+<pre><code class="python"># &lt;configuration&gt;    &lt;property&gt;        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;        &lt;value&gt;yarn&lt;/value&gt;    &lt;/property&gt;# &lt;/configuration&gt;
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210918002417429.png" alt="image-20210918002417429"></p>
-</blockquote>
 <h5 id="4-编辑yarn-site-xml"><a href="#4-编辑yarn-site-xml" class="headerlink" title="4.编辑yarn-site.xml"></a>4.编辑yarn-site.xml</h5><pre><code>vi yarn-site.xml
 </code></pre>
-<pre><code class="python"># 添加    [在configuration之内]
-# &lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
-        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
-    &lt;/property&gt;
-    &lt;property&gt;
-        &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
-        &lt;value&gt;node01&lt;/value&gt;
-    &lt;/property&gt;
-# &lt;/configuration&gt;
+<pre><code class="python"># &lt;configuration&gt;    &lt;property&gt;        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;    &lt;/property&gt;    &lt;property&gt;        &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;        &lt;value&gt;node01&lt;/value&gt;    &lt;/property&gt;# &lt;/configuration&gt;
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917234932102.png" alt="image-20210917234932102"></p>
-</blockquote>
 <h5 id="5-编辑slaves"><a href="#5-编辑slaves" class="headerlink" title="5.编辑slaves"></a>5.编辑slaves</h5><pre><code>vi slaves
 </code></pre>
-<pre><code class="java">// 删除 localhost
-// 添加
-node01
-node02
-node03
+<pre><code class="java">// 删除 localhost// 添加node01node02node03
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917235059334.png" alt="image-20210917235059334"></p>
-</blockquote>
 <h5 id="6-编辑hadoop-env-sh"><a href="#6-编辑hadoop-env-sh" class="headerlink" title="6.编辑hadoop-env.sh"></a>6.编辑hadoop-env.sh</h5><pre><code>vi hadoop-env.sh
 </code></pre>
-<pre><code class="java">// 找到export JAVA_HOME=$&#123;JAVA_HOME&#125;
-// 修改
-export JAVA_HOME=/opt/module/jdk
+<pre><code class="python"># 修改export JAVA_HOME=/opt/module/jdk
 </code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210917235512185.png" alt="image-20210917235512185"></p>
-</blockquote>
-<h2 id="🖨️六-克隆虚拟机"><a href="#🖨️六-克隆虚拟机" class="headerlink" title="🖨️六.克隆虚拟机"></a>🖨️六.克隆虚拟机</h2><h5 id="1-关闭node01"><a href="#1-关闭node01" class="headerlink" title="1.关闭node01"></a>1.关闭node01</h5><pre><code>poweroff
-</code></pre>
-<h5 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2.克隆"></a>2.克隆</h5><pre><code class="java">选中node01虚拟机 &gt;&gt; 管理 &gt;&gt; 克隆 &gt;&gt; 下一页 &gt;&gt; 下一页 &gt;&gt; 创建完整克隆 &gt;&gt; 修改虚拟机名称及位置 &gt;&gt; 完成
-// 需要两台虚拟机,所以我们要克隆2次
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210918000043900.png" alt="image-20210918000043900"></p>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210918000210885.png" alt="image-20210918000210885"></p>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210918000249647.png" alt="image-20210918000249647"></p>
-<p>[注意] 上面的虚拟机名字是可自定义的,不用跟我一模一样,建议是对应你的主机名{例:node02}</p>
-</blockquote>
-<h5 id="3-启动机器"><a href="#3-启动机器" class="headerlink" title="3.启动机器"></a>3.启动机器</h5><pre><code>开启 Node01 Node02 Node03
-</code></pre>
-<h5 id="4-修改Node02"><a href="#4-修改Node02" class="headerlink" title="4.修改Node02"></a>4.修改Node02</h5><pre><code class="java">// 修改主机名
-hostnamectl set-hostname node02
-// 编辑网卡,修改IP地址
-vi /etc/sysconfig/network-scripts/ifcfg-ens33
-</code></pre>
-<pre><code class="java">// 修改
-IPADDR=192.168.96.152        【!】
-</code></pre>
-<pre><code class="java">// 重启虚拟机
-reboot
-</code></pre>
-<h5 id="5-修改Node03"><a href="#5-修改Node03" class="headerlink" title="5.修改Node03"></a>5.修改Node03</h5><pre><code class="java">// 修改主机名
-hostnamectl set-hostname node03
-// 编辑网卡,修改IP地址
-vi /etc/sysconfig/network-scripts/ifcfg-ens33
-</code></pre>
-<pre><code class="java">// 修改
-IPADDR=192.168.96.153        【!】
-</code></pre>
-<pre><code class="java">// 重启虚拟机
-reboot
-</code></pre>
-<h2 id="🔑七-免密钥"><a href="#🔑七-免密钥" class="headerlink" title="🔑七.免密钥"></a>🔑七.免密钥</h2><pre><code class="java">// 只需要在Node01虚拟机上面操作即可
-//生成机器间通信的密钥对，输入命令，直接按4个回车
-    ssh-keygen -t rsa
-//创建authorized_keys文件
-    cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
-//修改authorized_keys文件权限为600
-    chmod 600 ~/.ssh/authorized_keys    
-//验证SSH是否安装成功
-    ssh  localhost
-    第一次登陆需要输入yes    
-//分发公钥，在分发过程中需输入yes和分发对象机器的登录密码
-    ssh-copy-id -i ~/.ssh/id_rsa.pub node02
-    ssh-copy-id -i ~/.ssh/id_rsa.pub node03
-</code></pre>
-<h2 id="🏳️‍🌈八-开启集群"><a href="#🏳️‍🌈八-开启集群" class="headerlink" title="🏳️‍🌈八.开启集群"></a>🏳️‍🌈八.开启集群</h2><h5 id="1-格式化namenode"><a href="#1-格式化namenode" class="headerlink" title="1.格式化namenode"></a>1.格式化namenode</h5><pre><code>hdfs namenode -format
-</code></pre>
-<h5 id="2-启动集群"><a href="#2-启动集群" class="headerlink" title="2.启动集群"></a>2.启动集群</h5><pre><code>start-all.sh
-</code></pre>
-<h5 id="3-验证"><a href="#3-验证" class="headerlink" title="3.验证"></a>3.验证</h5><pre><code class="java">jps // 查看java进程
-node01:50070 // 网址
-node01:8088 // 网址
-// 在HDFS中上传文件，在WEB中查看
-hdfs dfs -put &lt;文件路径&gt; &lt;上传到HDFS的路径&gt;
-</code></pre>
-<blockquote>
-<p><img src="./2021/10/17/Hadoop/md-img/image-20210918004742108.png" alt="image-20210918004742108"></p>
-</blockquote>
-<h5 id="3-关闭集群"><a href="#3-关闭集群" class="headerlink" title="3.关闭集群"></a>3.关闭集群</h5><pre><code>stop-all.sh
-</code></pre>
-<h1 id="🎆恭喜你成功搭建了Hadoop集群"><a href="#🎆恭喜你成功搭建了Hadoop集群" class="headerlink" title="🎆恭喜你成功搭建了Hadoop集群~"></a>🎆恭喜你成功搭建了Hadoop集群~</h1><hr>
-<h2 id="疑难杂症？"><a href="#疑难杂症？" class="headerlink" title="疑难杂症？"></a>疑难杂症？</h2><h4 id="1-使用RZ上传之后，用tar-zxvf解压显示"><a href="#1-使用RZ上传之后，用tar-zxvf解压显示" class="headerlink" title="1.使用RZ上传之后，用tar -zxvf解压显示"></a>1.使用RZ上传之后，用tar -zxvf解压显示</h4><pre><code>gzip: stdin: invalid compressed data--format violated
-tar: Child returned status 1
-tar: Error is not recoverable: exiting no
-</code></pre>
-<p><strong>解决：</strong> 这是因为你输入RZ后在上传文件窗口的左下角“以ASCII方式上传文件”打勾了，取消即可</p>
 <hr>
-<h4 id="2-SecureCRT显示中文乱码？"><a href="#2-SecureCRT显示中文乱码？" class="headerlink" title="2.SecureCRT显示中文乱码？"></a>2.SecureCRT显示中文乱码？</h4><p><strong>解决：</strong> 文件 &gt;&gt; 连接 &gt;&gt; 选中乱码的会话 &gt;&gt; 右键属性 （会话选项）&gt;&gt; 外观 &gt;&gt; 字符编码 &gt;&gt; UTF-8 确认保存即可</p>
+<h6 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h6><pre><code class="java">poweroff
+</code></pre>
+<h2 id="在Windows电脑上操作-3"><a href="#在Windows电脑上操作-3" class="headerlink" title="在Windows电脑上操作"></a>在Windows电脑上操作</h2><h6 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h6><pre><code class="java">选中node01虚拟机 &gt;&gt; 管理 &gt;&gt; 克隆 &gt;&gt; 下一页 &gt;&gt; 下一页 &gt;&gt; 创建完整克隆 &gt;&gt; 修改虚拟机名称及位置 &gt;&gt; 完成// 需要两台虚拟机,所以我们要克隆2次开启虚拟机 Node01 Node02 Node03
+</code></pre>
+<h2 id="在Node02中操作"><a href="#在Node02中操作" class="headerlink" title="在Node02中操作"></a>在Node02中操作</h2><h6 id="设置主机名-1"><a href="#设置主机名-1" class="headerlink" title="设置主机名"></a>设置主机名</h6><pre><code>hostnamectl set-hostname node02
+</code></pre>
+<h6 id="编辑网卡-1"><a href="#编辑网卡-1" class="headerlink" title="编辑网卡"></a>编辑网卡</h6><pre><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre>
+<pre><code class="python"># 修改    设置成你的Node02 IP地址IPADDR=192.168.80.152
+</code></pre>
 <hr>
-<h3 id="…-待添加"><a href="#…-待添加" class="headerlink" title="….待添加"></a>….待添加</h3>
+<h6 id="重启虚拟机"><a href="#重启虚拟机" class="headerlink" title="重启虚拟机"></a>重启虚拟机</h6><pre><code class="java">reboot
+</code></pre>
+<h2 id="在Node03中操作"><a href="#在Node03中操作" class="headerlink" title="在Node03中操作"></a>在Node03中操作</h2><h6 id="设置主机名-2"><a href="#设置主机名-2" class="headerlink" title="设置主机名"></a>设置主机名</h6><pre><code class="java">hostnamectl set-hostname node03
+</code></pre>
+<h6 id="编辑网卡-2"><a href="#编辑网卡-2" class="headerlink" title="编辑网卡"></a>编辑网卡</h6><pre><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre>
+<pre><code class="python"># 修改    设置成你的Node03 IP地址IPADDR=192.168.80.153
+</code></pre>
+<hr>
+<h6 id="重启虚拟机-1"><a href="#重启虚拟机-1" class="headerlink" title="重启虚拟机"></a>重启虚拟机</h6><pre><code class="java">reboot
+</code></pre>
+<h2 id="在Node01中操作-3"><a href="#在Node01中操作-3" class="headerlink" title="在Node01中操作"></a>在Node01中操作</h2><h6 id="免密钥"><a href="#免密钥" class="headerlink" title="免密钥"></a>免密钥</h6><pre><code class="java">// 只需要在Node01虚拟机上面操作即可//生成机器间通信的密钥对，输入命令，直接按4个回车    ssh-keygen -t rsa//创建authorized_keys文件    cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys//修改authorized_keys文件权限为600    chmod 600 ~/.ssh/authorized_keys    //验证SSH是否安装成功    ssh  localhost    第一次登陆需要输入yes    //分发公钥，在分发过程中需输入yes和分发对象机器的登录密码    ssh-copy-id -i ~/.ssh/id_rsa.pub node02    ssh-copy-id -i ~/.ssh/id_rsa.pub node03
+</code></pre>
+<h6 id="开启集群"><a href="#开启集群" class="headerlink" title="开启集群"></a>开启集群</h6><pre><code class="java">hdfs namenode -format    //格式化start-all.sh    // 启动集群
+</code></pre>
+<h6 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h6><pre><code class="java">// 命令 在Node01中输入jps// 网址 复制在浏览器地址栏中打开node01:50070node01:8088
+</code></pre>
+<h6 id="关闭集群"><a href="#关闭集群" class="headerlink" title="关闭集群"></a>关闭集群</h6><pre><code>stop-all.sh
+</code></pre>
+
       
     </div>
     <footer class="article-footer">
